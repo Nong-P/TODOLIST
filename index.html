@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>NongPtodo</title>
+          <script src="https://kit.fontawesome.com/78fa2e6600.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+          <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+          <link rel="stylesheet" href="src/output.css" />
+     </head>
+     <body class="bg-[url(/image.png)] bg-no-repeat bg-cover bg-fixed">
+          <section class="mt-[6rem]">
+               <div class="mx-[2rem] p-[1rem] md:p-[3rem] bg-black/10 border-[0.2rem] border-white/20 border-solid rounded-2xl backdrop-blur-[2rem] shadow-black/30 shadow-xl grid text-center md:flex md:justify-between">
+                    <div class="text-[2rem] font-bold mb-[1rem] md:mb-[0rem]">
+                         <h1>Todo</h1>
+                    </div>
+                    <div class="grid md:flex md:gap-[1rem]">
+                         <input class="bg-white/30 rounded-2xl backdrop-blur-[2rem] p-[0.5rem] mb-[1rem] md:mb-[0rem] transform transition-transform duration-500 hover:scale-103" id="text-todo" type="text" placeholder="Add new task..." />
+                         <input class="bg-white/30 rounded-2xl backdrop-blur-[2rem] p-[0.5rem] mb-[1rem] md:mb-[0rem] transform transition-transform duration-500 hover:scale-103" type="text" name="Enddate" id="Enddate" placeholder="DD/MM/YYYY" />
+                         <button class="bg-white/30 rounded-full backdrop-blur-[2rem] p-[0.5rem] mb-[1rem] md:mb-[0rem] transform transition-transform duration-500 hover:scale-103" id="add-todo" type="button">Add</button>
+                    </div>
+               </div>
+               <div>
+                    <div>
+                         <h2>List</h2>
+                    </div>
+                    <div>
+                         <ul id="todolist"></ul>
+                    </div>
+               </div>
+          </section>
+          <script src="script.js"></script>
+     </body>
+</html>
