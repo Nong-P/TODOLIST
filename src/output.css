@@ -235,17 +235,29 @@
       background-color: color-mix(in oklab, var(--color-white) 30%, transparent);
     }
   }
+  .bg-\[url\(\'\.\.\/src\/image\.png\'\)\] {
+    background-image: url('../src/image.png');
+  }
   .bg-\[url\(\'\.\/image\.png\'\)\] {
     background-image: url('./image.png');
   }
   .bg-\[url\(\'\.\/img\/image\.png\'\)\] {
     background-image: url('./img/image.png');
   }
+  .bg-\[url\(\'\.\/src\/image\.png\'\)\] {
+    background-image: url('./src/image.png');
+  }
   .bg-\[url\(\'\.img\/image\.png\'\)\] {
     background-image: url('.img/image.png');
   }
+  .bg-\[url\(\'\.src\/image\.png\'\)\] {
+    background-image: url('.src/image.png');
+  }
   .bg-\[url\(\'\/img\/image\.png\'\)\] {
     background-image: url('/img/image.png');
+  }
+  .bg-\[url\(\'img\/image\.png\'\)\] {
+    background-image: url('img/image.png');
   }
   .bg-cover {
     background-size: cover;
