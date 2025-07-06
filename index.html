@@ -10,6 +10,32 @@
           <link rel="stylesheet" href="src/output.css" />
      </head>
      <body class="text-white bg-[url(../src/MinimalisticMountainSunset562023.png)] bg-no-repeat bg-cover bg-center bg-fixed">
+          <div id="alert-error-popup" class="z-50 fixed inset-0 items-center justify-center hidden opacity-0 transition-all duration-300">
+               <div class="p-[1rem] w-[20rem] h-[20rem] bg-black/50 border-[0.2rem] border-white/20 border-solid rounded-2xl backdrop-blur-[0.8rem] shadow-black/30 shadow-xl flex flex-col items-center justify-center text-center">
+                    <div class="mt-[-5rem] mb-[1rem]">
+                         <img src="../src/hannie-Photoroom.png" alt="" />
+                    </div>
+                    <div class="text-gray-500 mb-[1rem] text-[1.1rem]">
+                         <p>Don't forget to add your task and due date!!</p>
+                    </div>
+                    <div id="alert-error-btn" class="text-white font-bold w-full p-[0.5rem] bg-white/40 rounded-full backdrop-blur-[2rem] transform transition-transform duration-300 hover:scale-103 cursor-pointer flex items-center justify-center">
+                         <button type="button">Ok</button>
+                    </div>
+               </div>
+          </div>
+          <div id="alert-done-popup" class="z-50 fixed inset-0 items-center justify-center hidden opacity-0 transition-all duration-300">
+               <div class="p-[1rem] w-[20rem] h-[20rem] bg-black/50 border-[0.2rem] border-white/20 border-solid rounded-2xl backdrop-blur-[0.8rem] shadow-black/30 shadow-xl flex flex-col items-center justify-center text-center">
+                    <div class="mt-[-5rem] mb-[1rem]">
+                         <img src="../src/hannie-Photoroom(1).png" alt="" />
+                    </div>
+                    <div class="text-gray-500 mb-[1rem] text-[1.5rem]">
+                         <p>🎊Congratulation🎊</p>
+                    </div>
+                    <div id="alert-done-btn" class="text-white font-bold w-full p-[0.5rem] bg-white/40 rounded-full backdrop-blur-[2rem] transform transition-transform duration-300 hover:scale-103 cursor-pointer flex items-center justify-center">
+                         <button type="button">Ok</button>
+                    </div>
+               </div>
+          </div>
           <section class="mt-[3rem]">
                <div class="contain-content mx-[2rem] mb-[3rem] p-[0.5rem] md:p-[3rem] bg-black/10 border-[0.2rem] border-white/20 border-solid rounded-2xl backdrop-blur-[0.8rem] shadow-black/30 shadow-xl">
                     <div class="text-[2rem] font-bold mb-[1rem] flex justify-center">

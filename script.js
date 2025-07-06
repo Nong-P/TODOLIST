@@ -17,20 +17,55 @@ const fp = flatpickr("#Enddate", {
      dateFormat: "d/m/Y",
 });
 const todoendinput = document.getElementById("Enddate");
+const alerterrorpopup = document.getElementById("alert-error-popup");
+const alerterrorbtn = document.getElementById("alert-error-btn");
+const alertdonepopup = document.getElementById("alert-done-popup");
+const alertdonebtn = document.getElementById("alert-done-btn");
 
-if (input && add && list) {
+if (alerterrorbtn && alerterrorpopup) {
+     alerterrorbtn.addEventListener("click", () => {
+          alerterrorpopup.classList.add("opacity-0");
+          alerterrorpopup.classList.remove("opacity-100");
+          setTimeout(() => {
+               alerterrorpopup.classList.add("hidden");
+               alerterrorpopup.classList.remove("flex");
+          }, 100);
+     });
+}
+
+if (alertdonebtn && alertdonepopup) {
+     alertdonebtn.addEventListener("click", () => {
+          alertdonepopup.classList.add("opacity-0");
+          alertdonepopup.classList.remove("opacity-100");
+          setTimeout(() => {
+               alertdonepopup.classList.add("hidden");
+               alertdonepopup.classList.remove("flex");
+          }, 100);
+     });
+}
+
+if (input && add && list && alerterrorpopup) {
      add.addEventListener("click", () => {
           const todolist = input.value.trim();
           const todoend = todoendinput.value;
+          if (!todolist || !todoend) {
+               alerterrorpopup.classList.remove("hidden");
+               alerterrorpopup.classList.add("flex");
+               setTimeout(() => {
+                    alerterrorpopup.classList.remove("opacity-0");
+                    alerterrorpopup.classList.add("opacity-100");
+               }, 100);
+               return;
+          }
           if (todolist) {
                // add todolist
                const todoitem = document.createElement("li");
                todoitem.innerHTML = `
                <div class="mx-[2rem] mb-[2rem] gap-[1rem] p-[1rem] bg-black/10 border-[0.2rem] border-white/20 border-solid rounded-2xl backdrop-blur-[0.5rem] shadow-black/30 shadow-xl grid text-center md:flex md:justify-between">
                               <div class="grid md:flex items-center gap-[1rem]">
-                                   <p class="text-[1.5rem] break-all">${todolist}</p>
-                                   <p class="font-bold">Start  ${nowdate}</p>
-                                   <p class="font-bold">End  ${todoend}</p>
+                                   <p class="text-[1.5rem] font-bold break-all">${todolist}</p>
+                                   <p class="">Start date ${nowdate}</p>
+                                   <p class="">Due date ${todoend}</p>
                               </div>
                               <div class="flex justify-center items-center gap-[1rem]">
                                    <div class="btn-parent h-[3rem] w-[3rem] text-[1.3rem] bg-red-500/30 rounded-full backdrop-blur-[2rem] p-[0.5rem] mb-[1rem] md:mb-[0rem] transform transition-transform duration-500 hover:scale-105 cursor-pointer flex items-center justify-center">
@@ -67,6 +102,14 @@ if (input && add && list) {
                     btnpa.classList.toggle("bg-green-500/30");
                     btnpa.classList.toggle("bg-red-500/30");
                     updatestats();
+               });
+               btnx.addEventListener("click", () => {
+                    alertdonepopup.classList.remove("hidden");
+                    alertdonepopup.classList.add("flex");
+                    setTimeout(() => {
+                         alertdonepopup.classList.remove("opacity-0");
+                         alertdonepopup.classList.add("opacity-100");
+                    }, 100);
                });
                updatestats();
           }
