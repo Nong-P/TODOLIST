@@ -237,15 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                }
 
-               if (todoendText.value.trim() === "") {
-                    todoendText.value = "N/A";
-               }
-
+               const dueDateText = todoendText.trim() === "" ? "N/A" : todoendText;
+               
                const newTodoData = {
                     subject: subjectText,
                     text: todolistText,
                     startDate: nowdate,
-                    dueDate: todoendText,
+                    dueDate: dueDateText,
                     isDone: false,
                };
 
