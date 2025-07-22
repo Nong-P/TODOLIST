@@ -204,11 +204,12 @@ const loadTodosFromLocalStorage = () => {
           const todos = JSON.parse(storedTodos);
 
           todos.sort((a, b) => {
-               const dateA = new Date(a.dueDate.split("/").reverse().join("-"));
-               const dateB = new Date(b.dueDate.split("/").reverse().join("-"));
-               return dateA - dateB;
+                if (a.dueDate === "N/A") return 1;
+                if (b.dueDate === "N/A") return -1;
+                const dateA = new Date(a.dueDate.split("/").reverse().join("-"));
+                const dateB = new Date(b.dueDate.split("/").reverse().join("-"));
+                return dateA - dateB;
           });
-
           list.innerHTML = "";
 
           todos.forEach((todo) => {
