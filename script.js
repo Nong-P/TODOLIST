@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
                const todoendText = todoendinput.value;
                const subjectText = subjectselect.value;
 
-               if (!todolistText || !todoendText || subjectText === "select") {
+               if (!todolistText || subjectText === "select") {
                     alerterrorpopup.classList.remove("hidden");
                     alerterrorpopup.classList.add("flex");
                     setTimeout(() => {
@@ -235,6 +235,10 @@ document.addEventListener("DOMContentLoaded", () => {
                          alerterrorpopup.classList.add("opacity-100");
                     }, 100);
                     return;
+               }
+
+               if (todoendText.value.trim() === "") {
+                    todoendText.value = "N/A";
                }
 
                const newTodoData = {
